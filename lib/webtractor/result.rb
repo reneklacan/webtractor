@@ -7,5 +7,9 @@ module Webtractor
       @text = xml.text
       @xml = xml
     end
+
+    def save filename
+      File.write(filename, @xml.to_s)
+    end
   end
 end

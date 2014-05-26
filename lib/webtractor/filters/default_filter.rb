@@ -11,6 +11,7 @@ module Webtractor::Filters
         RemoveNoncontent.new,
         RemoveMenus.new,
         RemoveFooter.new,
+        RemoveHeader.new,
         RemoveEmbeds.new,
         RemoveSmallest.new,
         RemoveEmpty.new,

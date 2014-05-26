@@ -2,6 +2,8 @@
 /tmp
 /log
 
+out.html
+test.rb
 *.swp
 *.swo
 *.gem
