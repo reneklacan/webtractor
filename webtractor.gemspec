@@ -18,7 +18,9 @@ Gem::Specification.new do |s|
   s.test_files = Dir['test/**/*']
 
   s.required_ruby_version = '>= 1.9'
+  s.add_dependency 'mechanize'
   s.add_dependency 'nokogiri'
   s.add_dependency 'cachy'
   s.add_dependency 'moneta'
+  s.add_development_dependency 'jazz_hands'
 end

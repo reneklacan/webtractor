@@ -15,7 +15,7 @@ module Webtractor::Filters
         ul.remove if a_count >= li_count.to_f/2
       end
 
-      explore(page.name, page.at('body'))
+      explore(page.name, page)
 
       page
     end

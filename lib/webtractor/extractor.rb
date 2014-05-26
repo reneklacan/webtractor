@@ -3,6 +3,7 @@ module Webtractor
     attr_accessor :filters
 
     def initialize params={}
+      @agent = params[:agent] || Mechanize.new
       @filters = params[:filters] || [Filters::DefaultFilter.new]
       @cache = params[:cache] || false
       @cache_params = params[:cache_params] || {}
@@ -14,15 +15,16 @@ module Webtractor
 
     def extract_from_xml page
       title = page.xpath('//head/title').text
+      body = page.at('body')
       @filters.each do |filter|
-        page = filter.process(page)
+        body = filter.process(body)
       end
-      Result.new(title, page)
+      Result.new(title, body)
     end
 
     def extract_from_url url
       content = Cachy.cache_if(@cache, "webtractor.#{url}", @cache_params) do
-        open(url).read
+        @agent.get(url).content
       end
       extract(content)
     end

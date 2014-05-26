@@ -1,4 +1,5 @@
 require 'open-uri'
+require 'mechanize'
 require 'nokogiri'
 require 'cachy'
 require 'moneta'

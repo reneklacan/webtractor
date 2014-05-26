@@ -1,7 +1,7 @@
 module Webtractor::Filters
   class RemoveEmpty
     def process page
-      explore(page.name, page.at('body'))
+      explore(page.name, page)
       page
     end
 
@@ -12,7 +12,9 @@ module Webtractor::Filters
         explore(path, child)
       end
 
-      node.remove if node.text.nil? || node.text.strip == ''
+      empty = node.text.nil? || node.text.strip == ''
+      hidden = node['class'] && node['class'].include?('hidden')
+      node.remove if empty || hidden
     end
   end
 end

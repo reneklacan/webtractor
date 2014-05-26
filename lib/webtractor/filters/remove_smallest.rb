@@ -1,7 +1,7 @@
 module Webtractor::Filters
   class RemoveSmallest
     def process page
-      explore(page.name, page.at('body'))
+      explore(page.name, page)
       page
     end
 

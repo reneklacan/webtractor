@@ -6,7 +6,7 @@ module Webtractor::Filters
 
     def process page
       @nodes = {}
-      explore(page.name, page.at('body'))
+      explore(page.name, page)
       @nodes = Hash[@nodes.sort.reverse]
 
       max = @nodes.keys[0]
