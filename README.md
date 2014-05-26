@@ -1,7 +1,7 @@
 # Webtractor
 
 The Webtractor is a ruby library which is able to extract main content
-from webpages like news, blogs, etc. As a result you can just a main
+from webpages like news, blogs, etc. As a result you can just have a main
 content without any boilerplate (menu, footer, comments, etc).
 
 ## Installation
@@ -89,4 +89,4 @@ extractor.add_filter RemoveBolds.new
 
 ## License
 
-This library is distributed under the Bearware license.
+This library is distributed under the Beerware license.
